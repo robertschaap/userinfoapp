@@ -1,0 +1,10 @@
+extends layout.pug
+
+block content
+  main
+    h2 Search
+    form(id="searchform" action="/searchresults" method="post")
+      label User(s) first and/or last name separated with a space
+      br
+      input(id="srcfield" type="search" name="searchfield")
+      input(id="srcbtn" type="submit" value="search")

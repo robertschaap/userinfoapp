@@ -1,0 +1,83 @@
+/* Style Definitions */
+
+/* Global Styles */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+    font-family: 'Avenir Next', 'Helvetica Neue', sans-serif;
+    margin: 0 auto;
+    width: 90%;
+    background-color: #eee;
+}
+header {
+    padding: 1rem;
+}
+
+footer {
+    padding: 1rem 1rem;
+}
+footer p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+main {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    border-bottom: 2px solid #ccc;
+}
+nav a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #009999;
+    font-weight: 500;
+
+}
+nav a+a::before {
+    content: ' | ';
+    color: #aaa;
+}
+h1 {
+    font-weight: 100;
+    margin-bottom: 0;
+}
+h2 {
+    font-weight: 100;
+    border-bottom: 1px solid #ccc;
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 100%;
+}
+thead {
+    text-align: left;
+    background-color: #009999;
+    color: #fff;
+}
+tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+/* Forms */
+#searchform input, #addform input {
+    border: 1px solid #ccc;
+}
+
+#searchform input#srcbtn {
+    border-left: none;
+    background-color: #009999;
+    color: #fff;
+}
+
+#addform #addbtn {
+    border: 1px solid #ccc;
+    margin-top: 0.5rem;
+    width: auto;
+    background-color: #009999;
+    color: #fff;
+}

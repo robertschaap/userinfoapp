@@ -1,0 +1,20 @@
+extends layout.pug
+
+block content
+  main
+    h2 Search Results for #{searchRequest}
+    if searchusers[0]
+      table
+        thead
+          tr
+            th First Name
+            th Last Name
+            th E-mail
+        tbody
+          each e in searchusers
+            tr
+              td= e.firstname
+              td= e.lastname
+              td= e.email
+    else
+      p Your search retrieved no results.

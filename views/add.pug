@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+  main
+    h2 Add User
+    form(id="addform" action="/adduser" method="post")
+      label First Name:&nbsp;
+      input(type="text" name="firstname")
+      br
+      label Last Name:&nbsp;
+      input(type="text" name="lastname")
+      br
+      label E-mail Address:&nbsp;
+      input(type="email" name="email")
+      br
+      input(id="addbtn" type="submit" value="submit")
