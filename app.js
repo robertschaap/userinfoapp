@@ -25,7 +25,6 @@ app.get('/search', function(req, res) {
         res.render('search', { users: userData });
     });
 });
-
 app.get('/add', function(req, res) {
     jsonSuite.parser(() => {
         res.render('add', { users: userData });

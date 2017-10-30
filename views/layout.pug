@@ -6,15 +6,19 @@ html(lang="en")
     title UIA
     link(rel="stylesheet" href="stylesheets/styles.css")
     link(rel="icon" type="image/png" href="images/favicon.png" sizes="32x32")
-  header
-    h1 User Information Application (UIA)
-    nav
-      a(href="/users") Users
-      a(href="/search") Search
-      a(href="/add") Add
-  block content
-  footer
-    p User Information Application
-    p Robert Schaap for NYCDYA - 2017
-  script(src="https://code.jquery.com/jquery-3.2.1.js", integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=", crossorigin="anonymous")
-  script(type="text/javascript", src="scripts/javascript.js")
+  body
+    header
+      h1 User Information Application (UIA)
+      nav
+        a(href="/users") Users
+        a(href="/search") Search
+        a(href="/add") Add
+    block content
+    footer
+      p User Information Application
+      p Robert Schaap for NYCDYA - 2017
+    script.
+          var userArray = !{JSON.stringify(users)};
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(type="text/javascript", src="scripts/javascript.js")
+

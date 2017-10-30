@@ -3,7 +3,7 @@ const fs = require('fs');
 function JSONparser(callback) {
     fs.readFile('./users.json', function(err, data){
         if (err) {
-            throw err
+            throw err;
         }
         userData = JSON.parse(data);
         callback();
@@ -19,9 +19,9 @@ function JSONwriter(req, callback) {
         callback();
     });
 }
-
 function JSONsearcher(req, callback) {
     let searchRequest  = req.body.searchfield.split(' ');
+    console.log(searchRequest);
     searchRequest.forEach((e) => {
          searchRequest[searchRequest.indexOf(e)] = e[0].toUpperCase() + e.substring(1).toLowerCase();
     });
