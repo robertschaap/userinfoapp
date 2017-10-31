@@ -21,7 +21,6 @@ function JSONwriter(req, callback) {
 }
 function JSONsearcher(req, callback) {
     let searchRequest  = req.body.searchfield.split(' ');
-    console.log(searchRequest);
     searchRequest.forEach((e) => {
          searchRequest[searchRequest.indexOf(e)] = e[0].toUpperCase() + e.substring(1).toLowerCase();
     });
@@ -35,9 +34,20 @@ function JSONsearcher(req, callback) {
     });
     callback();
 }
+function JSONlivesearch(req, callback) {
+    let liveRequest = [];
+    for (let j = 0; j < userData.length; j++) {
+        liveRequest.push(userData[j].firstname + ' ' + userData[j].lastname);
+    }
+    let output = liveRequest.filter(function(element) {
+        return element.toLowerCase().indexOf(req.query.input) > -1
+    });
+    callback(output);
+}
 
 module.exports = {
     parser: JSONparser,
     writer: JSONwriter,
-    searcher: JSONsearcher
+    searcher: JSONsearcher,
+    livesearch: JSONlivesearch
 }

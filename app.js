@@ -30,6 +30,12 @@ app.get('/add', function(req, res) {
         res.render('add', { users: userData });
     });
 });
+app.get('/livesearch', function(req, res) {
+    console.log("server request processing");
+    jsonSuite.livesearch(req, (data) => {
+        res.send( { output: data })
+    });
+});
 app.post('/searchresults', function(req, res) {
     jsonSuite.searcher(req, () => {
         res.render('searchresults', {searchusers: searchFiltered, searchRequest: req.body.searchfield});
@@ -40,6 +46,3 @@ app.post('/adduser', function(req, res) {
         res.redirect('users');
     });
 });
-
-
-// get searchresults from inputbox and route somewhere, have that get route send back data (res.send)
