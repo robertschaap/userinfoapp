@@ -31,9 +31,8 @@ app.get('/add', function(req, res) {
     });
 });
 app.get('/livesearch', function(req, res) {
-    console.log("server request processing");
-    jsonSuite.livesearch(req, (data) => {
-        res.send( { output: data })
+    jsonSuite.livesearch(req, (outputData) => {
+        res.send( { output: outputData })
     });
 });
 app.post('/searchresults', function(req, res) {

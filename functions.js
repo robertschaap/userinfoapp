@@ -27,7 +27,7 @@ function JSONsearcher(req, callback) {
     searchFiltered = [];
     let searchResults = searchRequest.forEach((e) => {
         for(let i = 0; i < userData.length; i++) {
-             if(userData[i].firstname == e || userData[i].lastname == e) {
+            if(userData[i].firstname == e || userData[i].lastname == e) {
                 searchFiltered.push(userData[i]);
             }
         }
@@ -39,10 +39,10 @@ function JSONlivesearch(req, callback) {
     for (let j = 0; j < userData.length; j++) {
         liveRequest.push(userData[j].firstname + ' ' + userData[j].lastname);
     }
-    let output = liveRequest.filter(function(element) {
+    let outputData = liveRequest.filter(function(element) {
         return element.toLowerCase().indexOf(req.query.input) > -1
     });
-    callback(output);
+    callback(outputData);
 }
 
 module.exports = {

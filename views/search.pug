@@ -3,7 +3,7 @@ extends layout.pug
 block content
   main
     h2 Search
-    p User(s) first and/or last name.
+    p User(s) first and/or last name separated by spaces.
     section(id="search")
         form(id="searchform" action="/searchresults" method="post" autocomplete="off")
           button(id="srcbtn" type="button" value="search") Search
